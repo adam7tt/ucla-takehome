@@ -27,6 +27,3 @@ def prime_factorization(n):
 def back_to_int(string):
     return int(string.split("(")[0])
 
-def back_to_float(string):
-    return float(string.split("(")[0])
-
