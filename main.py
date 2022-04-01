@@ -22,11 +22,11 @@ def main():
             seen[row['Slug State']] = 1
             state_data.append({"State" : row['State'], row['ID Year'] : str(row['Population'])})
 
-    data_file = open('./output/data_file.csv', 'w')
+    data_file = open('data_file.csv', 'w')
     output = csv.writer(data_file)
     output.writerow(state_data[0].keys())
 
-    pdf = PdfPages('./output/Report:State_Population.pdf')
+    pdf = PdfPages('summary.pdf')
 
     for item in state_data:
         item[str(list(item.keys())[-1]) + " Factorization"] = prime_factorization(int(item[list(item.keys())[-1]].split('(')[0]))
